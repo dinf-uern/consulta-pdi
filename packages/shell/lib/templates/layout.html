@@ -1,0 +1,10 @@
+<template name="layout">
+  {{> header appName="app" classIcon="zmdi zmdi-archive zmdi-hc-2x"}}
+  <div class="container">
+    {{> errors}}
+    <div id="main">
+      {{> yield}}
+    </div>
+  </div>
+  {{> footer}}
+</template>
