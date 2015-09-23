@@ -1,0 +1,14 @@
+sudo: required
+language: node_js
+node_js:
+- '0.12'
+cache:
+  directories:
+  - "~/.meteor"
+  - node_modules
+  - webapp/node_modules
+install:
+- curl https://install.meteor.com | /bin/sh
+- meteor update
+script:
+- meteor --test --release velocity:METEOR@1.1.0.3_1
