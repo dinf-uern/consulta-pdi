@@ -1,0 +1,16 @@
+<template name="menuItem">
+    {{#if submenus}}
+        <li class="dropdown {{activeRouteClassDropdown getSubmenusStates}}">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{dataItem.title}} <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                {{#each submenus}}
+                    {{> menuItem}}
+                {{/each}}
+            </ul>
+        </li>
+    {{else}}
+        <li class="{{activeRouteClass dataItem.state}}">
+            <a href="{{link}}" target="{{target}}">{{dataItem.title}} <span class="sr-only"></span></a>
+        </li>
+    {{/if}}
+</template>
