@@ -35,3 +35,10 @@ Template.menuItem.helpers({
         return result;
     }
 });
+
+Template.menuItem.events({
+    'click a': function(event, template){
+        if (this.dataItem.get() && this.dataItem.get().action && typeof this.dataItem.get().action === 'function')
+            this.dataItem.get().action();
+    }
+});
