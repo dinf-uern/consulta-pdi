@@ -1,0 +1,41 @@
+<template name="editarPerfil">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Editar perfil</h3>
+                </div>
+                <div class="panel-body">
+                    <form accept-charset="UTF-8" role="form" class="form-horizontal">
+                        <div class="form-group {{errorClass 'fotoPerfil'}}">
+                            <label for="nomeCompleto" class="col-lg-3 control-label">Foto</label>
+                            <div class="col-lg-9">
+                                <button class="btn btn-default btn-sm btn-escolher-midia"><i class="fa fa-picture-o"></i> Escolher mídia ...</button>
+                            </div>
+                        </div>
+                        <div class="form-group {{errorClass 'nomeCompleto'}}">
+                            <label for="nomeCompleto" class="col-lg-3 control-label">Nome completo</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="nomeCompleto" name="nomeCompleto" placeholder="Nome completo" data-toggle="popover" data-content="Informe seu nome completo, incluindo nome e sobrenome. <b>Ex.: Francisco Bezerra da Costa.</b>">
+                                <span class="help-block">{{errorMessage 'nomeCompleto'}}</span>
+                            </div>
+                        </div>
+                        <div class="form-group {{errorClass 'nomeCurto'}}">
+                            <label for="nomeCurto" class="col-lg-3 control-label">Nome curto</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="nomeCurto" name="nomeCurto" placeholder="Nome curto" data-toggle="popover" data-content="Informe o nome como gostaria de ser chamado. O nome curto irá aparecer em emails informais e notificações do sistema. <b>Ex.: Antonio, Pedro, Joaquim.</b>">
+                                <span class="help-block">{{errorMessage 'nomeCurto'}}</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="submitButton" class="col-lg-3 control-label"></label>
+                            <div class="col-lg-9">
+                                <button type="submit" class="btn btn-success">Salvar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
