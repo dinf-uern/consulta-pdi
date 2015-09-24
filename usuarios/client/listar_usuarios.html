@@ -1,0 +1,25 @@
+<template name="listarUsuarios">
+    <div class="row">
+        <div class="well">
+            <h3>Usuários</h3>
+        </div>
+        {{#each usuarios}}
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h5>
+                        <span>{{getEmail}}</span>
+                        <div class="pull-right text-right">
+                            <button class="btn btn-default btn-sm btn-definir-papeis"><i class="fa fa-unlock-alt"></i> {{rolesDesc}}</button>
+                        </div>
+                    </h5>
+                </div>
+            </div>
+        {{else}}
+            <div class="panel panel-default">
+                <div class="panel-body text-center">
+                    <h5>Nenhum usuário encontrado!</h5>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</template>

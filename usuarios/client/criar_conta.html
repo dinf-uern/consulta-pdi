@@ -1,0 +1,30 @@
+<template name="criarConta">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Criar conta</h3>
+                </div>
+                <div class="panel-body">
+                    <form accept-charset="UTF-8" role="form">
+                        <fieldset>
+                            <div class="form-group {{errorClass 'email'}}">
+                                <input class="form-control" placeholder="E-mail" name="email" type="email">
+                                <span class="help-block">{{errorMessage 'email'}}</span>
+                            </div>
+                            <div class="form-group {{errorClass 'senha'}}">
+                                <input class="form-control" placeholder="Senha" name="senha" type="password" value="">
+                                <span class="help-block">{{errorMessage 'senha'}}</span>
+                            </div>
+                            <div class="form-group {{errorClass 'confirm'}}">
+                                <input class="form-control" placeholder="Confirmar senha" name="confirm" type="password" value="">
+                                <span class="help-block">{{errorMessage 'confirm'}}</span>
+                            </div>
+                            <input class="btn btn-lg btn-success btn-block" type="submit" value="enviar">
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
