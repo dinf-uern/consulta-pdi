@@ -1,0 +1,13 @@
+<template name="inputMeta">
+    <li class="{{errorClass 'texto'}}" style="margin-top: 16px;">
+        <div class="row well">
+            <div class="col-md-10">
+                <textarea rows="2" type="text" class="form-control inputMeta" placeholder="Escreva a meta e pressione <Enter>" autocomplete="off"></textarea>
+                <span class="help-block">{{errorMessage 'texto'}}</span>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-default btn-sm btn-incluir">incluir meta</button>
+            </div>
+        </div>
+    </li>
+</template>

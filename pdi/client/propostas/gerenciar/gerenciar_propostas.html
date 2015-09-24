@@ -1,0 +1,39 @@
+<template name="gerenciarPropostas">
+    <div class="well" style="margin-bottom: 20px;">
+        <form class="form-inline">
+            <select class="form-control input-topico">
+                <option value="">-- tópico --</option>
+                {{#each topicos}}
+                    <option value="{{_id}}" selected="{{selectedOption}}">{{texto}}</option>
+                {{/each}}
+            </select>
+            <div class="checkbox" style="margin-left: 20px;">
+                <label>
+                    <input type="checkbox" checked="{{mostrarParagrafos}}" id="inputMostrarParagrafos"> Mostrar parágrafos
+                </label>
+            </div>
+            <div class="checkbox" style="margin-left: 20px;">
+                <label>
+                    <input type="checkbox" checked="{{somenteComProposta}}" id="inputSomenteComProposta"> Somente com propostas
+                </label>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-12">
+        {{#if topicoAtual}}
+            <!--
+            <div class="alert alert-dismissible alert-success">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <p><i class="fa fa-info-circle"></i> Para enviar uma proposta de alteração, clique na parte do documento (tópico, subtópico, parágrafo, diretriz, meta ou ação) sobre a qual deseja comentar e, em seguida, descreva sua sugestão na caixa que aparece.</p>
+            </div>
+            -->
+            {{> pdiNodeItem node=topicoAtual mostrarSubnodes=true selecionavel=false mostrarIndicadoresPropostas=true}}
+        {{else}}
+            <div class="panel text-center">
+                <div class="panel-body">
+                    <h5>Selecione um tópico!</h5>
+                </div>
+            </div>
+        {{/if}}
+    </div>
+</template>

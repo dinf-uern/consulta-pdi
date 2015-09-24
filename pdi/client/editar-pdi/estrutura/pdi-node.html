@@ -1,0 +1,22 @@
+<template name="pdiNode">
+    <div class="pdi-node {{selectedClass}}">
+        {{#if isTopico}}
+            {{> pdiTopico}}
+        {{/if}}
+        {{#if isSubtopico}}
+            {{> pdiSubtopico}}
+        {{/if}}
+        {{#if isParagrafo}}
+            {{> pdiParagrafo}}
+        {{/if}}
+        {{#if isDiretriz}}
+            {{> pdiDiretriz}}
+        {{/if}}
+        {{#if isMeta}}
+            {{> pdiMeta}}
+        {{/if}}
+        {{#if isAcao}}
+            {{> pdiAcao}}
+        {{/if}}
+    </div>
+</template>

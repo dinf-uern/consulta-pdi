@@ -1,0 +1,27 @@
+<template name="pdiSubtopico">
+    <div class="pdi-subtopico {{selectedClass}}">
+        {{#if mostrar}}
+            <h6>{{texto}}</h6>
+        {{/if}}
+        <div class="node-buttons">
+            {{#if mostrar}}
+                <button class="btn btn-default btn-xs btn-esconder">esconder {{tipo}}</button>
+            {{else}}
+                <button class="btn btn-default btn-xs btn-mostrar">mostrar {{tipo}}</button>
+            {{/if}}
+            <div class="pull-right">
+                {{#if mostrarSubnodes}}
+                    <button class="btn btn-default btn-xs btn-esconder-subnodes">esconder subnodes {{countSubnodes}}</button>
+                {{else}}
+                    <button class="btn btn-default btn-xs btn-mostrar-subnodes">mostrar subnodes {{countSubnodes}}</button>
+                {{/if}}
+                <button class="btn btn-danger btn-xs"><i class="fa fa-trash btn-remove"></i></button>
+            </div>
+        </div>
+    </div>
+    {{#if mostrarSubnodes}}
+        {{#each subnodes}}
+            {{> pdiNode}}
+        {{/each}}
+    {{/if}}
+</template>

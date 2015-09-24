@@ -1,0 +1,19 @@
+.proposta-item {
+
+}
+
+.proposta-item {
+
+}
+
+.proposta-item.desconsiderada {
+    opacity: 0.3;
+}
+
+.proposta-item.desconsiderada {
+    text-decoration: line-through;
+}
+
+.proposta-item.desconsiderada:hover {
+    opacity: 1;
+}

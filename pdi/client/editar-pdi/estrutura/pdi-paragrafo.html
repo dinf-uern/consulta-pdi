@@ -1,0 +1,21 @@
+<template name="pdiParagrafo">
+    <div class="pdi-paragrafo {{selectedClass}}">
+        {{> inputOrdem}}
+        {{#if mostrar}}
+            <p>{{texto}}</p>
+        {{/if}}
+        <div class="node-buttons">
+            {{#if mostrar}}
+                <button class="btn btn-default btn-xs btn-esconder">esconder {{tipo}}</button>
+            {{else}}
+                <button class="btn btn-default btn-xs btn-mostrar">mostrar {{tipo}}</button>
+            {{/if}}
+            <button class="btn btn-danger btn-xs"><i class="fa fa-trash btn-remove"></i></button>
+        </div>
+    </div>
+    {{#if mostrarSubnodes}}
+        {{#each subnodes}}
+            {{> pdiNode}}
+        {{/each}}
+    {{/if}}
+</template>

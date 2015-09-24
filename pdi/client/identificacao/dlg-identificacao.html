@@ -1,0 +1,47 @@
+<template name="dlgIdentificacao">
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Informe seus dados para contato</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <fieldset>
+                            <div class="form-group {{errorClass 'relacao'}}">
+                                <label for="inputRelacao" class="col-md-4 control-label">Relação com a UERN</label>
+                                <div class="col-md-8">
+                                    <select class="form-control" id="inputRelacao">
+                                        <option value="" selected="{{relacaoOptionSelected}}">-- Relação --</option>
+                                        {{#each relacoesArr}}
+                                            <option value="{{cod}}">{{titulo}}</option>
+                                        {{/each}}
+                                    </select>
+                                    <span class="help-block">{{errorMessage 'relacao'}}</span>
+                                </div>
+                            </div>
+                            <div class="form-group {{errorClass 'nome'}}">
+                                <label for="inputNome" class="col-md-4 control-label">Nome</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" id="inputNome" placeholder="Informe seu nome" value="{{nome}}">
+                                    <span class="help-block">{{errorMessage 'nome'}}</span>
+                                </div>
+                            </div>
+                            <div class="form-group {{errorClass 'email'}}">
+                                <label for="inputEmail" class="col-md-4 control-label">Email</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" id="inputEmail" placeholder="Informe seu email" value="{{email}}">
+                                    <span class="help-block">{{errorMessage 'email'}}</span>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-success btn-salvar">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

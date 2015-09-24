@@ -1,0 +1,3 @@
+Template.editarPdi.onCreated(function(){
+
+});

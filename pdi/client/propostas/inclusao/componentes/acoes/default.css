@@ -1,0 +1,22 @@
+.form-proposta {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.ul-metas, .ul-acoes {
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+.ul-metas > .ul-acoes {
+    list-style-type: none;
+    padding-left: 60px;
+}
+
+li.li-input {
+    /*margin-top: 20px;*/
+}
+
+.inputAcao, .inputMeta {
+    margin-bottom: 5px;
+}

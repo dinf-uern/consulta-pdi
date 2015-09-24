@@ -1,0 +1,38 @@
+p.item-part {
+    font-size: 0.95em;
+
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+
+    /*
+      Introduced in IE 10.
+      See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+    */
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.item-part.selected {
+    background-color: #E4ECFF;
+}
+
+.pdi-node {
+    margin-left: 20px;
+}
+
+.pdi-paragrafo.selected, .pdi-topico.selected, .pdi-subtopico.selected, .pdi-diretriz.selected, .pdi-meta.selected, .pdi-acao.selected {
+    border: solid thin #AAD6FF;
+    background-color: #F9FCFF;
+}
+
+.estrutura {
+    position: fixed;
+    top: 10px;
+    bottom: 0px;
+    right: 0px;
+    height: 100%;
+    overflow-y: scroll;
+    width: 55%;
+    padding-bottom: 20px;
+}

@@ -1,0 +1,17 @@
+<template name="comboTopico">
+    <div class="form-group {{errorClass}}">
+        <label for="inputTopico" class="col-lg-2 control-label">Tópico</label>
+        <div class="col-lg-10">
+            <select class="form-control" id="inputTopico">
+                <option value="">-- Tópico --</option>
+                {{#each topicos}}
+                    <option value="{{_id}}">{{texto}}</option>
+                {{/each}}
+            </select>
+            <span class="help-block">{{RegExpErrorMessage}}</span>
+        </div>
+    </div>
+    {{#if mostrarSubtopicos}}
+        {{> comboSubtopico subtopicos=subtopicos nivel=1}}
+    {{/if}}
+</template>

@@ -1,0 +1,26 @@
+<template name="postBox">
+    <ul class="nav nav-tabs">
+        <li class="{{activeTabClass '#proporAlteracao'}}"><a href="#proporAlteracao" data-toggle="tab" aria-expanded="false"><i class="fa fa-eraser"></i> Propor Alteração</a></li>
+        <!--<li class="{{activeTabClass '#proporInclusao'}}"><a href="#proporInclusao" data-toggle="tab" aria-expanded="true"><i class="fa fa-plus"></i> Propor Inclusão</a></li>-->
+    </ul>
+    <div class="tab-content {{tabContentClass}}">
+        <div class="tab-pane fade in {{activeTabClass '#proporAlteracao'}}" id="enviar">
+            <form id="formAlteracao" style="padding: 10px;">
+                <div class="form-group {{errorClass 'descricao'}}">
+                    <textarea rows="2" class="form-control" id="inputDescricaoPropostaAlteracao" placeholder="Descreva sua proposta de alteração"></textarea>
+                    <span class="help-block">{{errorMessage 'descricao'}}</span>
+                </div>
+                <button type="submit" class="btn btn-success btn-sm">Enviar</button>
+            </form>
+        </div>
+        <div class="tab-pane fade in {{activeTabClass '#proporInclusao'}}" id="galeria">
+            <form id="formInclusao" style="padding: 10px;">
+                <div class="form-group {{errorClass 'descricao'}}">
+                    <textarea rows="2" class="form-control" id="inputDescricaoPropostaInclusao" placeholder="Descreva sua proposta de inclusão"></textarea>
+                    <span class="help-block">{{errorMessage 'descricao'}}</span>
+                </div>
+                <button type="submit" class="btn btn-success btn-sm">Enviar</button>
+            </form>
+        </div>
+    </div>
+</template>

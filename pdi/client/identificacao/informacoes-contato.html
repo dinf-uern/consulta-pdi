@@ -1,0 +1,12 @@
+<template name="informacoesContato">
+  {{#if identificado}}
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Olá, {{primeiroNome}} <span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu">
+            <li><a href="#" class="btn-limpar">limpar</a></li>
+        </ul>
+    </li>
+  {{else}}
+      <li><a href="#" class="btn-fornecer-contato">Fornecer Contato</a></li>
+  {{/if}}
+</template>

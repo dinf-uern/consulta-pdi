@@ -1,0 +1,8 @@
+<template name="propostaInclusaoMetasItem">
+    {{#each metas}}
+        {{> pdiMetaItem node=this}}
+        <div style="padding-left: 20px;">
+            {{> propostaInclusaoAcoesItem acoes=acoes}}
+        </div>
+    {{/each}}
+</template>

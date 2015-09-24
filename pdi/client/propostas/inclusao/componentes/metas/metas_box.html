@@ -1,0 +1,15 @@
+<template name="metasBox">
+    <ul class="ul-metas">
+        {{#each metas}}
+            {{> metaItem}}
+            {{> acoesBox}}
+        {{else}}
+            <li>
+                <em><i class="fa fa-warning text-warning"></i> Nehuma meta foi adicionada ainda</em>
+            </li>
+        {{/each}}
+        <li>
+            {{> inputMeta }}
+        </li>
+    </ul>
+</template>

@@ -1,0 +1,13 @@
+<template name="propostaInclusaoItem">
+    {{#if isInclusaoDeDiretriz}}
+        {{> propostaInclusaoDiretrizItem}}
+    {{/if}}
+
+    {{#if isInclusaoDeMetas}}
+        {{> propostaInclusaoMetasItem}}
+    {{/if}}
+
+    {{#if isInclusaoDeAcoes}}
+        {{> propostaInclusaoAcoesItem}}
+    {{/if}}
+</template>

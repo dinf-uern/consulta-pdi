@@ -1,0 +1,50 @@
+<template name="propostasDlg">
+    <div class="modal fade">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Gerenciar Propostas</h4>
+                </div>
+                <div class="modal-body">
+                    {{> pdiNodeItem node=node mostrarSubnodes=false selecionavel=false mostrarIndicadoresPropostas=false}}
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        {{#each tabs}}
+                            <li role="presentation" class="{{activeTabClass}}"><a href="#{{id}}" aria-controls="{{id}}" role="tab" data-toggle="tab">{{#if icon}}<i class="fa {{icon}}"></i>{{/if}} {{title}}</a></li>
+                        {{/each}}
+                        <div class="pull-right">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" id="inputOcultarDesconsideradas" checked="{{mostrarParagrafos}}"> Ocultar desconsideradas
+                                </label>
+                            </div>
+                        </div>
+                    </ul>
+                    <div style="padding-top: 20px;">
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            {{#each tabs}}
+                                <div role="tabpanel" class="tab-pane {{activePageClass}}" id="{{id}}">
+                                    {{#if ready}}
+                                        {{#each propostas}}
+                                            {{> propostaItem }}
+                                        {{else}}
+                                            <div class="well well-sm text-center">Nenhum item encontrado!</div>
+                                        {{/each}}
+                                    {{else}}
+                                        {{> loading }}
+                                    {{/if}}
+                                </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">sair</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</template>

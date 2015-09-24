@@ -1,0 +1,13 @@
+<template name="comboMeta">
+    <div class="form-group {{errorClass}}">
+        <label for="inputMeta" class="col-lg-2 control-label">Meta</label>
+        <div class="col-lg-10">
+            <select class="form-control" id="inputMeta" disabled="{{disableMeta}}">
+              <option value="">-- Meta --</option>
+              {{#each metas}}
+                  <option value="{{_id}}">{{texto}}</option>
+              {{/each}}
+            </select>
+        </div>
+    </div>
+</template>

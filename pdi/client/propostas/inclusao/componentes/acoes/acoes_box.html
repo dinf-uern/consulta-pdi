@@ -1,0 +1,12 @@
+<template name="acoesBox">
+    <ul class="ul-acoes">
+      {{#each acoes}}
+        {{> acaoItem}}
+      {{else}}
+          <li>
+              <em><i class="fa fa-warning text-warning"></i> Nehuma ação foi adicionada ainda</em>
+          </li>
+      {{/each}}
+      {{> inputAcao}}
+    </ul>
+</template>

@@ -1,0 +1,36 @@
+<template name="propostaItem">
+    <div class="panel panel-default proposta-item {{classDesconsiderada}}">
+        <div class="panel-heading">
+            {{#if contato}}
+                <span style="margin-right:10px;"><i class="fa fa-user"></i> {{contato.nome}} (<strong>{{contato.relacao}}</strong>)</span>
+            {{else}}
+                <span style="margin-right:10px; color: darkgray;"><i class="fa fa-user"></i> Anônimo</span>
+            {{/if}}
+            <span><i class="fa fa-calendar"></i> {{data}}</span>
+            <div class="pull-right">
+                {{#if desconsiderada}}
+                    <button class="btn btn-primary btn-xs btn-reconsiderar"><i class="fa fa-thumbs-o-up"></i> Reconsiderar</button>
+                {{else}}
+                    <button class="btn btn-default btn-xs btn-desconsiderar"><i class="fa fa-thumbs-o-down"></i> Desconsiderar</button>
+                {{/if}}
+
+                {{#if expandir}}
+                    <button class="btn btn-xs btn-default btn-contrair"><i class="fa fa-compress"></i></button>
+                {{else}}
+                    <button class="btn btn-xs btn-default btn-expandir"><i class="fa fa-expand"></i></button>
+                {{/if}}
+            </div>
+        </div>
+        {{#if expandir}}
+            <div class="panel-body">
+                {{#if isPropostaInclusao}}
+                    {{> propostaInclusaoItem}}
+                {{/if}}
+
+                {{#if isPropostaAlteracao}}
+                    {{> propostaAlteracaoItem}}
+                {{/if}}
+            </div>
+        {{/if}}
+    </div>
+</template>

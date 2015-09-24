@@ -1,0 +1,12 @@
+.pdi-node-item > .pdi-node-item {
+    margin-left: 20px;
+}
+
+.pdi-node-item-main.selected {
+    border: solid thin #AAD6FF;
+    background-color: #F9FCFF;
+}
+
+.pdi-node-item-main.selectable {
+    cursor: pointer;
+}

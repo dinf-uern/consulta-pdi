@@ -1,0 +1,16 @@
+<template name="comboDiretriz">
+    <div class="form-group {{errorClass}}">
+        <label for="inputMeta" class="col-lg-2 control-label">Diretriz</label>
+        <div class="col-lg-10">
+            <select class="form-control" id="inputDiretriz" disabled="{{disableDiretriz}}">
+              <option value="">-- Diretriz --</option>
+              {{#each diretrizes}}
+                <option value="{{_id}}">{{texto}}</option>
+              {{/each}}
+            </select>
+        </div>
+    </div>
+    {{#if mostrarMetas}}
+        {{> comboMeta metas=metas}}
+    {{/if}}
+</template>

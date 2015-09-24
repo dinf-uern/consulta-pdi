@@ -1,0 +1,19 @@
+<template name="estrutura">
+    <div class="estrutura">
+        <h5>Estrutura</h5>
+        <select class="form-control input-topico">
+            <option value="">-- tópico --</option>
+            {{#each topicos}}
+                <option value="{{_id}}" selected="{{selectedOption}}">{{texto}}</option>
+            {{/each}}
+        </select>
+        {{#if naoTemTopicoSelecionado}}
+            <div class="panel text-center">
+                Selecione um tópico!
+            </div>
+        {{/if}}
+        {{#each nodes}}
+            {{> pdiNode}}
+        {{/each}}
+    </div>
+</template>

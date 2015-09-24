@@ -1,0 +1,45 @@
+<template name="pdiNodeItem">
+    <div class="pdi-node-item">
+        <div class="pdi-node-item-main {{selectableClass}} {{selectedClass}}">
+            {{#if mostrarIndicadoresPropostas}}
+                <div class="pull-right">
+                    {{> inclusionCountIcon }}
+                    {{> changeCountIcon }}
+                </div>
+            {{/if}}
+
+            {{#if isTopico}}
+                {{> pdiTopicoItem}}
+            {{/if}}
+            {{#if isSubtopico}}
+                {{> pdiSubtopicoItem}}
+            {{/if}}
+            {{#if isParagrafo}}
+                {{> pdiParagrafoItem}}
+            {{/if}}
+            {{#if isDiretriz}}
+                {{> pdiDiretrizItem}}
+            {{/if}}
+            {{#if isMeta}}
+                {{> pdiMetaItem}}
+            {{/if}}
+            {{#if isAcao}}
+                {{> pdiAcaoItem}}
+            {{/if}}
+
+            {{#if mostrarPostBox}}
+                {{> postBox node=node mostrarTabInclusao=false _id=_id}}
+            {{/if}}
+        </div>
+
+        {{#if mostrarSubnodes}}
+            {{#if carregou}}
+                {{#each subnodes}}
+                    {{> pdiNodeItem node=this mostrarSubnodes=mostrarSubnodes selecionavel=selecionavel mostrarIndicadoresPropostas=mostrarIndicadoresPropostas}}
+                {{/each}}
+            {{else}}
+                {{> inlineLoading}}
+            {{/if}}
+        {{/if}}
+    </div>
+</template>
