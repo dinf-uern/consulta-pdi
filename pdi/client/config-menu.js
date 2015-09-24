@@ -1,14 +1,17 @@
-Menus.addMenuItem({title: 'Propor Alteração', state:'enviarPropostaAlteracao', side: 'left'});
+var menuProporAlteracao = new MenuItem({title: 'Propor Alteração', state:'enviarPropostaAlteracao'});
+var menuProporInclusao = new MenuItem({title: 'Propor Inclusão'});
+var menuGerenciar = new MenuItem({title: 'Gerenciar'}, ['pdi-admin']);
+var menuEstatisticas = new MenuItem({title: 'Estatísticas', state: 'verEstatisticas'});
+var menuDocumento = new MenuItem({title: 'Documento Original', side: 'left', link: 'https://drive.google.com/open?id=0BwVbrTaXFs-jMEY5amhXUnlqTzRmUjdrLVNtSGNhX0c0bExv', target:'_doc'});
 
-Menus.addMenuItem({title: 'Propor Inclusão', side: 'left', submenus: [
-    {title: 'Diretriz', state:'enviarPropostaInclusaoDiretriz'},
-    {title: 'Metas', state:'enviarPropostaInclusaoMetas'},
-    {title: 'Ações', state:'enviarPropostaInclusaoAcoes'}
-]});
+Menu.add(menuProporAlteracao, 'left');
+Menu.add(menuProporInclusao, 'left');
+Menu.add(menuGerenciar, 'left');
+Menu.add(menuEstatisticas, 'left');
+Menu.add(menuDocumento, 'left');
 
-Menus.addMenuItem({title: 'Gerenciar', roles:['pdi-admin'], side: 'left', submenus: [
-    {title: 'Propostas', state:'gerenciarPropostas'}
-]});
+menuProporInclusao.add(new MenuItem({title: 'Diretriz', state:'enviarPropostaInclusaoDiretriz'}));
+menuProporInclusao.add(new MenuItem({title: 'Metas', state:'enviarPropostaInclusaoMetas'}));
+menuProporInclusao.add(new MenuItem({title: 'Ações', state:'enviarPropostaInclusaoAcoes'}));
 
-Menus.addMenuItem({title: 'Estatísticas', side: 'left', state: 'verEstatisticas'});
-Menus.addMenuItem({title: 'Documento Original', side: 'left', link: 'https://drive.google.com/open?id=0BwVbrTaXFs-jMEY5amhXUnlqTzRmUjdrLVNtSGNhX0c0bExv', target:'_doc'});
+menuGerenciar.add(new MenuItem({title: 'Propostas', state:'gerenciarPropostas'}));
