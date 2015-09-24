@@ -13,8 +13,10 @@ getMenuContaTitle = function(){
     return 'Conta';
 }
 
-Menus.addMenuItem({
-    title: getMenuContaTitle, loggedIn: true, side: 'right', submenus: [
-        {title: 'Sair', loggedIn: true, state: 'sair'}
-    ]
-});
+var contaMenu = new MenuItem({title: getMenuContaTitle, onlyLoggedIn: true});
+contaMenu.add(new MenuItem({title: 'sair', state: 'sair', onlyLoggedIn: true}));
+
+var testMenu = new MenuItem({title:'some title'});
+
+Menu.add(contaMenu, 'right');
+//Menu.add(testMenu);
