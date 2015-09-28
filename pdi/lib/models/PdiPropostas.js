@@ -35,6 +35,13 @@ Meteor.methods({
 
         PdiPropostas.update({_id: propostaId}, {$set: {homologada: true}});
     },
+    removerHomologacao: function(propostaId){
+        var self = this;
+        if (!Roles.userIsInRole(self.userId, ['admin','pdi-admin']))
+            throw new Meteor.Error('Acesso negado!');
+
+        PdiPropostas.update({_id: propostaId}, {$unset: {homologada: ""}});
+    },
     desconsiderarProposta: function(propostaId){
         var self = this;
         if (!Roles.userIsInRole(self.userId, ['admin','pdi-admin']))
