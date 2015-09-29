@@ -17,3 +17,7 @@
 .proposta-item.desconsiderada:hover {
     opacity: 1;
 }
+
+.panel.panel-success .panel-body {
+    background-color: #E6F5E6 !important;
+}
