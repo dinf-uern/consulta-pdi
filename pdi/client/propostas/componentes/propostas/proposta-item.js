@@ -3,6 +3,9 @@ Template.propostaItem.onCreated(function(){
 });
 
 Template.propostaItem.helpers({
+    panelClass: function(){
+        return this.homologada && this.homologada === true? 'panel-success': 'panel-default';
+    },
     expandir: function(){
       return Template.instance().expandir.get();
     },
