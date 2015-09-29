@@ -1,10 +1,18 @@
 Template.propostaItem.onCreated(function(){
     this.expandir = new ReactiveVar(true);
+    this.aguardandoHomologar = new ReactiveVar(false);
+    this.aguardandoDesfazerHomologacao = new ReactiveVar(false);
 });
 
 Template.propostaItem.helpers({
     panelClass: function(){
         return this.homologada && this.homologada === true? 'panel-success': 'panel-default';
+    },
+    aguardandoHomologar: function(){
+        return Template.instance().aguardandoHomologar.get();
+    },
+    aguardandoDesfazerHomologacao: function(){
+        return Template.instance().aguardandoDesfazerHomologacao.get();
     },
     expandir: function(){
       return Template.instance().expandir.get();
