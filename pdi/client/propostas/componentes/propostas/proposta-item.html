@@ -8,6 +8,13 @@
             {{/if}}
             <span><i class="fa fa-calendar"></i> {{data}}</span>
             <div class="pull-right">
+
+                {{#if homologada}}
+                    <button class="btn btn-xs btn-default btn-desfazer-homologacao"><i class="fa fa-undo"></i> Desfazer Homologação</button>
+                {{else}}
+                    <button class="btn btn-xs btn-success btn-homologar"><i class="fa fa-check"></i> Homologar</button>
+                {{/if}}
+
                 {{#if desconsiderada}}
                     <button class="btn btn-primary btn-xs btn-reconsiderar"><i class="fa fa-thumbs-o-up"></i> Reconsiderar</button>
                 {{else}}
@@ -19,6 +26,7 @@
                 {{else}}
                     <button class="btn btn-xs btn-default btn-expandir"><i class="fa fa-expand"></i></button>
                 {{/if}}
+
             </div>
         </div>
         {{#if expandir}}
