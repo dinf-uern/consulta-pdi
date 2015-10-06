@@ -25,15 +25,22 @@ Meteor.startup(function () {
     }*/
 
     //var diretrizesNodes = PdiNodes.find({tipo: 'diretriz'}).fetch();
-    var nodesComPropostas = PdiNodes.find({$or: [{countPropostasInclusao: {$gt: 0}}, {countPropostasAlteracao: {$gt: 0}}]}).fetch();
+    //var nodesComPropostas = PdiNodes.find({$or: [{countPropostasInclusao: {$gt: 0}}, {countPropostasAlteracao: {$gt: 0}}]}).fetch();
 
     //_.map(diretrizesNodes, updateParentTree);
-    _.map(nodesComPropostas, updatePaiContendoNodesComProposta);
+    //_.map(nodesComPropostas, updatePaiContendoNodesComProposta);
 
     //var nodes = PdiNodes.find({});
     //_.each(nodes, function(node){
     //   PdiNodes.update({}, {$set: {countPropostasAlteracao: 0, countPropostasInclusao: 0}}, {multi: true});
     //});
+
+    /*
+    var propostas = PdiPropostas.find().forEach(function(proposta){
+        proposta._id = undefined;
+        console.log(proposta);
+    });
+    */
 
 });
 
