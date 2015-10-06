@@ -11,6 +11,14 @@ PdiNodes.getPai = function(node){
     return result;
 }
 
+PdiNodes.updateParentTree = function(node, modifier){
+    PdiNodes.update(node, modifier);
+    var pai = this.getPai(node);
+
+    if (pai)
+        this.updateParentTree(pai, modifier);
+}
+
 PdiNodes.updatePaiContendoNodesComProposta = function(node){
     var pai = this.getPai(node);
 
@@ -18,8 +26,8 @@ PdiNodes.updatePaiContendoNodesComProposta = function(node){
         PdiNodes.update(node, {$set: {temFilhoComProposta: true}});
         this.updatePaiContendoNodesComProposta(pai);
     }
-
 }
+
 
 Meteor.methods({
     /*addPdiNode: function(node){

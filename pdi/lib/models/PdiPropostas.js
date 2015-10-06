@@ -4,6 +4,8 @@ PdiPropostas.before.insert(function(userId, doc){
     doc.enviadoEm = new Date();
 });
 
+PdiPropostas.after.update(afterUpdateProposta);
+
 PdiPropostas.after.insert(afterInsertProposta);
 
 PdiPropostas.after.remove(afterInsertProposta);
@@ -23,8 +25,39 @@ function afterInsertProposta(userId, doc){
     }
 
     var node = PdiNodes.findOne(doc.nodeId);
-
     PdiNodes.updatePaiContendoNodesComProposta(node);
+}
+
+function afterUpdateProposta(userId, doc, fieldNames, modifier, options) {
+    if ((modifier.$set && modifier.$set.homologada === true) || (modifier.$unset && modifier.$unset.homologada === '')) {
+        var countPropostasInclusaoHomologadasNoMesmoNode = PdiPropostas.find({tipo:'inclusao', nodeId: doc.nodeId, homologada: true}).count();
+        var countPropostasAlteracaoHomologadasNoMesmoNode = PdiPropostas.find({tipo:'alteracao', nodeId: doc.nodeId, homologada: true}).count();
+        var temFilhoComPropostaInclusaoHomologada = countPropostasInclusaoHomologadasNoMesmoNode > 0;
+        var temFilhoComPropostaAlteracaoHomologada = countPropostasAlteracaoHomologadasNoMesmoNode > 0;
+        var node = PdiNodes.findOne(doc.nodeId);
+        //atualiza os nodes pais indicando que tem filho com proposta homologada
+        PdiNodes.updateParentTree(node, {$set: {temFilhoComPropostaHomologada: temFilhoComPropostaAlteracaoHomologada || temFilhoComPropostaInclusaoHomologada}});
+
+        //var valor = modifier.$unset && !temFilhoComPropostaHomologada? false: true;
+
+        if (doc.tipo === 'alteracao') {
+            PdiNodes.update(doc.nodeId, {$set: {temPropostaAteracaoHomologada: temFilhoComPropostaAlteracaoHomologada}});
+        } else if (doc.tipo === 'inclusao') {
+            PdiNodes.update(doc.nodeId, {$set: {temPropostaInclusaoHomologada: temFilhoComPropostaInclusaoHomologada}});
+        }
+
+    }
+
+
+    /*PdiNodes.updateParentTree() = function(node){
+        var propostasHomologadas = PdiPropostas.find({})
+        var pai = this.getPai(node);
+
+        if (pai) {
+            PdiNodes.update(node, {$set: {temFilhoComPropostaHomologada: value}});
+            this.atualizarEstruturaNodesComPropostaHomologada(pai);
+        }
+    }*/
 }
 
 Meteor.methods({
