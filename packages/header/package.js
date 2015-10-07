@@ -16,13 +16,17 @@ Package.onUse(function(api) {
   api.use([
     'templating',
     'underscore',
-    'ixdi:material-design-iconic-font',
+    'reactive-var',
     'dinf-uern:menu'
   ],['client']);
 
   api.addFiles([
-    'lib/templates/header.html'
+    'lib/modules/header.js',
+    'lib/templates/header.html',
+    'lib/templates/header.js'
   ],['client']);
+
+  api.export("Header", ['client']);
 });
 
 Package.onTest(function(api) {
