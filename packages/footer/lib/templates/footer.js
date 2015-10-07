@@ -3,7 +3,7 @@ Template.footer.helpers({
         var dateOnServer = Session.get('dateOnServer');
         return moment(dateOnServer).format('YYYY');
     },
-    version: function(){
-        return Footer.getVersion();
+    textOnRight: function(){
+        return Footer.getTextOnRight();
     }
 });

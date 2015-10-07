@@ -1,9 +1,9 @@
 Footer = {
-    version: "v0.1.0-dev",
-    setVersion: function(version){
-        this.version = version;
+    textOnRight: "",
+    setTextOnRight: function(text){
+        this.textOnRight = text;
     },
-    getVersion: function(){
-        return this.version;
+    getTextOnRight: function(){
+        return this.textOnRight;
     }
 }
