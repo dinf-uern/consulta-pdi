@@ -18,6 +18,7 @@ Package.onUse(function(api) {
   ]);
 
   api.addFiles([
+    'lib/modules/footer.js',
     'lib/templates/footer.html',
     'lib/templates/footer.js',
     'lib/stylesheets/footer.css',
