@@ -25,6 +25,7 @@ Package.onUse(function(api) {
     'public/images/dinf-uern-logo.png',
   ], ['client']);
 
+  api.export("Footer", ['client']);
 });
 
 Package.onTest(function(api) {
