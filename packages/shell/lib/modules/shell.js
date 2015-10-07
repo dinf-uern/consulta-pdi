@@ -1,5 +1,8 @@
 Shell = {
+    config: new ReactiveVar({}),
     setConfig: function(config){
+        this.config.set(config);
+
         if (config.lang){
             TAPi18n.setLanguage(config.lang);
             moment.locale(config.lang);
