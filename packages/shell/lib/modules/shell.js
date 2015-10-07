@@ -11,5 +11,13 @@ Shell = {
         if (config.version){
             Footer.setTextOnRight(config.version);
         }
+
+        if (config.appIcon) {
+            Header.appIcon.set(config.appIcon);
+        }
+
+        if (config.appName) {
+            Header.appName.set(config.appName);
+        }
     }
 }
