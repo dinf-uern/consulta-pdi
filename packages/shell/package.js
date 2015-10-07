@@ -15,7 +15,8 @@ Package.onUse(function(api) {
 
   api.use([
     'templating',
-    'underscore'
+    'underscore',
+    'reactive-var'
   ]);
 
   api.use([
