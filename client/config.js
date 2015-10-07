@@ -13,6 +13,9 @@ item2.add(submenu3);
 Errors.throw('um erro qualquer em ' + moment(new Date()).format('MMMM Do YYYY, h:mm:ss a') + '!');
 
 Shell.setConfig({
-    lang: "pt-BR"
+    lang: "pt-BR",
+    version: "v0.1.0-dev",
+    appIcon: "fa fa-briefcase",
+    appName: "myApp"
 });
 
