@@ -4,15 +4,28 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-meteor-platform
 accounts-password
 alanning:roles
-dinf-uern:shell
 iron:router
-dinf-uern:menu
-dinf-uern:errors
-dinf-uern:loading
 momentjs:moment
 rzymek:moment-locale-pt-br
 bootswatch:paper
 fortawesome:fontawesome
+dinf:errors
+dinf:loading
+dinf:menu
+dinf:shell
+standard-minifiers
+meteor-base
+mobile-experience
+mongo
+blaze-html-templates
+session
+jquery
+tracker
+logging
+reload
+random
+ejson
+spacebars
+check
