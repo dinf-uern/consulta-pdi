@@ -74,7 +74,7 @@ Template.pdiNodeItem.helpers({
         if (somenteComProposta)
             query.$or = [{countPropostasInclusao: {$gt: 0}}, {countPropostasAlteracao: {$gt: 0}}, {temFilhoComProposta: true}];
 
-        return PdiNodes.find(query, {sort: {texto: 1}});
+        return PdiNodes.find(query);
     }
 });
 
