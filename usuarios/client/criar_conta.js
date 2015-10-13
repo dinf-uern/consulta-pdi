@@ -48,7 +48,7 @@ Template.criarConta.events({
       password: senha
     }, function(error) {
       if (error) {
-        return throwError(error.reason);
+        return Errors.throw(error.reason);
       }
 
       Router.go('/');
